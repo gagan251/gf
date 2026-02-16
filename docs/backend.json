@@ -1,0 +1,138 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the Bharat Learning Hub platform.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the user." },
+        "email": { "type": "string", "description": "User's email address.", "format": "email" },
+        "phone": { "type": "string", "description": "User's phone number." },
+        "firstName": { "type": "string", "description": "User's first name." },
+        "lastName": { "type": "string", "description": "User's last name." },
+        "displayName": { "type": "string", "description": "The full name of the user, derived from first and last name." },
+        "role": { "type": "string", "description": "Role of the user (e.g., student, admin)." }
+      },
+      "required": ["id", "email", "firstName", "lastName", "role", "phone"]
+    },
+    "Course": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Course",
+      "type": "object",
+      "description": "Represents a course offered on the Bharat Learning Hub platform.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the course." },
+        "name": { "type": "string", "description": "Name of the course (e.g., Typing Course, Stenography Course)." },
+        "description": { "type": "string", "description": "Description of the course content." }
+      },
+      "required": ["id", "name", "description"]
+    },
+    "Enrollment": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Enrollment",
+      "type": "object",
+      "description": "Represents a user's enrollment in a specific course.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the enrollment record." },
+        "userId": { "type": "string", "description": "Reference to User." },
+        "courseId": { "type": "string", "description": "Reference to Course." },
+        "enrollmentDate": { "type": "string", "description": "Date of enrollment.", "format": "date-time" }
+      },
+      "required": ["id", "userId", "courseId", "enrollmentDate"]
+    },
+    "Review": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Review",
+      "type": "object",
+      "description": "Represents a user-submitted review or testimonial.",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the review." },
+        "name": { "type": "string", "description": "Name of the person who submitted the review." },
+        "rating": { "type": "number", "description": "Rating given by the user, from 1 to 5." },
+        "feedback": { "type": "string", "description": "The feedback text." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the review was submitted." }
+      },
+      "required": ["id", "name", "rating", "feedback", "createdAt"]
+    },
+    "LiveClass": {
+      "title": "Live Class", "description": "Represents a scheduled live class session.", "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the live class." },
+        "title": { "type": "string", "description": "Title of the live class." },
+        "classTime": { "type": "string", "format": "date-time", "description": "Scheduled date and time for the class." },
+        "instructor": { "type": "string", "description": "Name of the instructor conducting the class." },
+        "link": { "type": "string", "description": "URL for the live class (e.g., Zoom, Google Meet)." },
+        "status": { "type": "string", "enum": ["Upcoming", "Live", "Completed"], "description": "Current status of the class." }
+      },
+      "required": ["id", "title", "classTime", "link", "status"]
+    },
+    "PlaybookFile": {
+      "title": "Playbook File", "description": "Represents a playbook file uploaded for student use.", "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the playbook file." },
+        "name": { "type": "string", "description": "The name of the file." },
+        "url": { "type": "string", "description": "The public download URL for the file from Firebase Storage." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the file was uploaded." }
+      },
+      "required": ["id", "name", "url", "createdAt"]
+    },
+    "StenoTest": {
+      "title": "Stenography Test", "description": "Represents a single stenography practice test.", "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier for the test." },
+        "title": { "type": "string", "description": "Title of the test." },
+        "language": { "type": "string", "description": "Language of the test (e.g., English, Hindi)." },
+        "speed": { "type": "string", "description": "Dictation speed (e.g., 80 WPM)." },
+        "duration": { "type": "string", "description": "Duration of the audio (e.g., 10 Minutes)." },
+        "audioUrl": { "type": "string", "description": "Public URL of the audio file in Firebase Storage." },
+        "originalText": { "type": "string", "description": "The complete and correct transcription of the audio." },
+        "isFree": { "type": "boolean", "description": "Whether the test is free for all users." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when the test was created." }
+      },
+      "required": ["id", "title", "language", "speed", "duration", "audioUrl", "originalText", "isFree", "createdAt"]
+    }
+  },
+  "auth": {
+    "providers": [ "password" ]
+  },
+  "firestore": {
+     "structure": [
+      {
+        "path": "/users/{userId}",
+        "schema": { "$ref": "#/entities/User" },
+        "description": "Stores user profiles."
+      },
+      {
+        "path": "/users/{userId}/enrollments/{enrollmentId}",
+        "schema": { "$ref": "#/entities/Enrollment" },
+        "description": "Stores a user's course enrollments."
+      },
+      {
+        "path": "/courses/{courseId}",
+        "schema": { "$ref": "#/entities/Course" },
+        "description": "Stores course information."
+      },
+      {
+        "path": "/reviews/{reviewId}",
+        "schema": { "$ref": "#/entities/Review" },
+        "description": "Stores user submitted reviews."
+      },
+      {
+        "path": "/liveClasses/{classId}",
+        "schema": { "$ref": "#/entities/LiveClass" },
+        "description": "Stores all live class sessions."
+      },
+       {
+        "path": "/playbooks/{playbookId}",
+        "schema": { "$ref": "#/entities/PlaybookFile" },
+        "description": "Stores metadata for all uploaded playbook files."
+      },
+      {
+        "path": "/stenoTests/{testId}",
+        "schema": { "$ref": "#/entities/StenoTest" },
+        "description": "Stores all stenography practice tests."
+      }
+    ]
+  }
+}
