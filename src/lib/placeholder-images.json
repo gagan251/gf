@@ -1,0 +1,76 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "Students learning on laptops in a modern classroom setting",
+      "imageUrl": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=600&h=400&auto=format&fit=crop",
+      "imageHint": "students laptops"
+    },
+    {
+      "id": "login-bg",
+      "description": "Person working on a laptop and phone in a bright workspace",
+      "imageUrl": "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=1200&h=1800&auto=format&fit=crop",
+      "imageHint": "laptop phone"
+    },
+    {
+      "id": "signup-bg",
+      "description": "A person using a tablet to fill out a registration form online.",
+      "imageUrl": "https://images.unsplash.com/photo-1586730539922-c38f7da45610?q=80&w=1200&h=1800&auto=format&fit=crop",
+      "imageHint": "register online"
+    },
+    {
+      "id": "dark-mode-bg",
+      "description": "A modern laptop on a dark desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "dark laptop"
+    },
+    {
+      "id": "why-choose-us-student",
+      "description": "A vintage typewriter on a wooden desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1586334413822-e3d85883a887?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "typewriter desk"
+    },
+    {
+      "id": "testimonial-avatar-1",
+      "description": "Avatar for the first testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1590086782792-42dd2350140d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzAxMzM3NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "testimonial-avatar-2",
+      "description": "Avatar for the second testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8fDE3NzAxNDkyODl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "testimonial-avatar-3",
+      "description": "Avatar for the third testimonial.",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzAxMDgyMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "background-image",
+      "description": "Abstract background image",
+      "imageUrl": "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "abstract background"
+    },
+    {
+      "id": "hero-carousel-1",
+      "description": "First image for the hero carousel.",
+      "imageUrl": "https://i.postimg.cc/vmhdx9sF/Whisk-b82ba988c90d2be95e149845e5dc8388dr.jpg",
+      "imageHint": "modern kitchen"
+    },
+    {
+      "id": "hero-carousel-2",
+      "description": "Second image for the hero carousel.",
+      "imageUrl": "https://i.postimg.cc/vmhdx9sF/Whisk-b82ba988c90d2be95e149845e5dc8388dr.jpg",
+      "imageHint": "kitchen tool"
+    },
+    {
+      "id": "light-mode-bg",
+      "description": "A clean workspace with a laptop on a desk in daylight.",
+      "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "laptop desk"
+    }
+  ]
+}
